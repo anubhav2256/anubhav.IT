@@ -61,35 +61,69 @@ button:hover {
 
 
 
-
-
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    margin: 0;
+    background-color: #ffffff;
     font-family: Arial, sans-serif;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    background-color: #000000;
-    padding: 3px 0;
-}
-
-.nav-column {
-    flex: 1;
+.neon-navbar {
     text-align: center;
+    /* margin-top: 50px; */
+    background-color: black;
+    padding: 8px;
 }
 
-.nav-column a {
-    color: white;
+.neon-navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.neon-navbar ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.neon-navbar ul li a {
     text-decoration: none;
-    padding: 5px 5px;
-    display: block;
-    transition: background-color 0.2s;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease-in-out;
 }
 
-.nav-column a:hover {
-    background-color: #3d4449;
+.glow a {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
 }
+
+.glow a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #0ff;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    transform: scaleX(1);
+    transition: transform 0.4s ease-in-out;
+}
+
+.glow a::before {
+    transform-origin: left;
+}
+
+.glow a::after {
+    transform-origin: right;
+    bottom: 0;
+    top: auto;
+}
+
